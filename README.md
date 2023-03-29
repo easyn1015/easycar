@@ -33,24 +33,6 @@ The use of mockup images can also help improve user experience as it provides co
     ┗ setupTests.js
 
 ---
-
-## 기술스택
-
--   React
--   JavaScript or TypeScript
-    -   TypeScript 사용 시
-    ```
-      npm install --save typescript @types/node @types/react @types/react-dom @types/jest
-    ```
--   상태관리는 필요하다면 외부 패키지(redux, mobx, recoil, zustand, jotai 등) 사용 가능
--   그 외 ui, event관련 패키지 (modal, chip button, scroll, animation등) 사용불가
--   styling을 위한 css-in-js(styled-component, emotion 등) 형태의 패키지는 사용가능
--   라우팅을 위해 react-router는 사용가능
-
-## 과제 내용
-
--   안내 메일에 첨부되어 있는 문서링크
-
 ## local에서 json-server 실행 방법
 
 ```
