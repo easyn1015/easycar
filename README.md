@@ -24,7 +24,7 @@ The use of mockup images can also help improve user experience as it provides co
     ┃ ┣ CarList.js                # A page for displaying a list of car products
     ┃ ┗ Home.js                   # The home page of the project
     ┣ .DS_Store
-    ┣ App.css                     # A stㅁylesheet for the entire UIs.
+    ┣ App.css                     # A stylesheet for the entire UIs.
     ┣ App.js
     ┣ App.test.js
     ┣ index.css
@@ -33,15 +33,6 @@ The use of mockup images can also help improve user experience as it provides co
     ┗ setupTests.js
 
 ---
-
-## 주의사항
-
--   🔥 **최종 코드 제출은 main 브랜치에 올려주세요. main 브랜치에 merge가 안되어 있으면 불합격 입니다.** 🔥
--   🔥 **node.js 버전은 최소 16이상 ~ LTS 버전(현재 18.12.0)을 사용해주세요.** 🔥
-
-## 참고
-
--   🔥 **기존 환경설정에 변경이 있거나 구현하신 내용에 설명이 필요할 시 README.md에 기재 부탁드립니다.** 🔥
 
 ## 기술스택
 

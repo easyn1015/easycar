@@ -14,12 +14,12 @@ function formatDrivingDistance(num) {
 }
 
 function mapTag(carTagType) {
-    if (carTagType === '인기') return 'popularity';
-    else if (carTagType === '특가') return 'special-price';
-    else if (carTagType === '신차') return 'new-car';
-    else if (carTagType === '신차급') return 'new-car-level';
-    else if (carTagType === '빠른대여') return 'fast-rental';
-    else if (carTagType === '프리미엄') return 'premium';
+    if (carTagType === 'Popularity') return 'popularity';
+    else if (carTagType === 'Special Price') return 'special-price';
+    else if (carTagType === 'New Car') return 'new-car';
+    else if (carTagType === 'New Car Level') return 'new-car-level';
+    else if (carTagType === 'Fast Rental') return 'fast-rental';
+    else if (carTagType === 'Premium') return 'premium';
 }
 
 const CarProductCard = (props) => {
@@ -47,24 +47,25 @@ const CarProductCard = (props) => {
             <div className='car-info-box'>
                 <h2 className='car-name'>{carClassName}</h2>
                 <div className='car-price-box'>
-                    <p className='car-discount-percent'>최대 할인율 {discountPercent}%</p>
-                    <p className='car-price'>₩{formatPrice(price)}~/월</p>
+                    <p className='car-discount-percent'>Maximum discount rate {discountPercent}%</p>
+                    <p className='car-price'>₩{formatPrice(price)}~/month</p>
                 </div>
                 <div className='car-etc-info'>
                     <p>{year}년</p>
                     <p>{formatDrivingDistance(drivingDistance)}km</p>
-                    <p>{regionGroups.join(', ')}</p>
+                    <p>{regionGroups && regionGroups.join(', ')}</p>
                 </div>
                 <div className='car-tag-box'>
-                    {carTypeTags.map((carTypeTag, index) => {
-                        return (
-                            <p
-                                key={index}
-                                className={`car-tag car-tag-${mapTag(carTypeTag)}`}>
-                                {carTypeTag}
-                            </p>
-                        );
-                    })}
+                    {carTypeTags &&
+                        carTypeTags.map((carTypeTag, index) => {
+                            return (
+                                <p
+                                    key={index}
+                                    className={`car-tag car-tag-${mapTag(carTypeTag)}`}>
+                                    {carTypeTag}
+                                </p>
+                            );
+                        })}
                 </div>
             </div>
         </div>

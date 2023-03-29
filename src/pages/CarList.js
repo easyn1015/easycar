@@ -63,27 +63,27 @@ const CarList = () => {
         }
 
         if (filters.popularity) {
-            filteredList = filteredList.filter((car) => car.carTypeTags.includes('인기'));
+            filteredList = filteredList.filter((car) => car.carTypeTags.includes('Popularity'));
         }
 
         if (filters.specialPrice) {
-            filteredList = filteredList.filter((car) => car.carTypeTags.includes('특가'));
+            filteredList = filteredList.filter((car) => car.carTypeTags.includes('Special Price'));
         }
 
         if (filters.newCar) {
-            filteredList = filteredList.filter((car) => car.carTypeTags.includes('신차'));
+            filteredList = filteredList.filter((car) => car.carTypeTags.includes('New Car'));
         }
 
         if (filters.newCarLevel) {
-            filteredList = filteredList.filter((car) => car.carTypeTags.includes('신차급'));
+            filteredList = filteredList.filter((car) => car.carTypeTags.includes('New Car Level'));
         }
 
         if (filters.fastRental) {
-            filteredList = filteredList.filter((car) => car.carTypeTags.includes('빠른대여'));
+            filteredList = filteredList.filter((car) => car.carTypeTags.includes('Fast Rental'));
         }
 
         if (filters.premium) {
-            filteredList = filteredList.filter((car) => car.carTypeTags.includes('프리미엄'));
+            filteredList = filteredList.filter((car) => car.carTypeTags.includes('Premium'));
         }
 
         setFilteredCars(filteredList);

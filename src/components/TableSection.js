@@ -7,7 +7,7 @@ const TableSection = ({ cars }) => {
             <div className='card-table'>
                 {cars.map((car, index) => (
                     <CarProductCard
-                        key={car.carClassId}
+                        key={index}
                         {...car}
                     />
                 ))}

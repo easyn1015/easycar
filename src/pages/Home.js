@@ -8,10 +8,10 @@ const Home = () => {
                 <div className='intro-box'>
                     <div className='bg-car'></div>
                     <p className='main-title'>
-                        쏘카를 더 오래,
-                        <br /> 내 차처럼
+                        Discover the Journey,
+                        <br /> Make it Your Destination.
                     </p>
-                    <p className='sub-title'>지금 가장 인기 많은 쏘카플랜을 만나보세요!</p>
+                    <p className='sub-title'>Meet the most popular EasyCar plan now!</p>
                 </div>
                 <NavLink
                     to='/list'

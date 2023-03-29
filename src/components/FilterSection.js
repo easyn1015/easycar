@@ -1,11 +1,43 @@
 import React, { useRef, useState } from 'react';
 import useHorizontalScroll from '../hooks/useHorizontalScroll';
 
-const filterOptions = {
-    carModel: ['경형/소형', '준중형', '중형/대형', '수입', 'SUV'],
-    regionGroups: ['서울/경기/인천', '부산/창원', '제주', '대구/경북', '대전', '광주'],
-    price: ['낮은 가격 순', '높은 가격 순'],
-};
+const filterOptions = [
+    {
+        label: 'Car Model',
+        options: ['All', 'Electric', 'Mid-Size', 'SUV', 'Minivan', 'Compact'],
+    },
+    {
+        label: 'Price Range',
+        options: ['All', 'Less than $20,000', '$20,000 - $30,000', '$30,000 - $40,000', 'Over $40,000'],
+    },
+    {
+        label: 'Region',
+        options: [
+            'All',
+            'San Francisco Bay Area',
+            'Los Angeles',
+            'San Diego',
+            'Sacramento',
+            'New York',
+            'Boston',
+            'Miami',
+        ],
+    },
+    {
+        label: 'Tags',
+        options: [
+            'All',
+            'Family',
+            'Safe',
+            'Comfort',
+            'Electric',
+            'Luxury',
+            'All-Wheel Drive',
+            'Spacious',
+            'Fuel-Efficient',
+        ],
+    },
+];
 
 const FilterSection = ({ filters, setFilters }) => {
     const [openStates, setOpenStates] = useState({
@@ -109,7 +141,7 @@ const FilterSection = ({ filters, setFilters }) => {
                     <button
                         onClick={resetFilters}
                         className='btn-reset'>
-                        초기화
+                        Reset
                     </button>
                 )}
                 <div className='filter-group'>
@@ -119,13 +151,13 @@ const FilterSection = ({ filters, setFilters }) => {
                             filters.carModel.length > 0 ? 'active' : ''
                         }`}
                         onClick={() => handleFilterOptionToggle('carModel')}>
-                        차종
+                        Car Model
                         {filters.carModel.length > 0 && (
                             <a
                                 href='#a'
                                 className='btn-reset-sub'
                                 onClick={() => (filters.carModel = [])}>
-                                초기화
+                                Reset
                             </a>
                         )}
                     </button>
@@ -137,7 +169,7 @@ const FilterSection = ({ filters, setFilters }) => {
                                 type='button'
                                 className='btn-tooltip-close'
                                 onClick={() => handleFilterOptionToggle(null)}>
-                                닫기
+                                Close
                             </button>
                             <ul>
                                 {filterOptions.carModel.map((model, index) => (
@@ -164,13 +196,13 @@ const FilterSection = ({ filters, setFilters }) => {
                             filters.regionGroups.length > 0 ? 'active' : ''
                         }`}
                         onClick={() => handleFilterOptionToggle('regionGroups')}>
-                        대여지역
+                        Rental location
                         {filters.regionGroups.length > 0 && (
                             <a
                                 href='#a'
                                 className='btn-reset-sub'
                                 onClick={() => (filters.regionGroups = [])}>
-                                초기화
+                                Reset
                             </a>
                         )}
                     </button>
@@ -182,10 +214,10 @@ const FilterSection = ({ filters, setFilters }) => {
                                 type='button'
                                 className='btn-tooltip-close'
                                 onClick={() => handleFilterOptionToggle(null)}>
-                                닫기
+                                Close
                             </button>
                             <ul>
-                                {filterOptions.regionGroups.map((group, index) => (
+                                {filterOptions[1].regionGroups.map((group, index) => (
                                     <li key={index}>
                                         <input
                                             id={group}
@@ -215,7 +247,7 @@ const FilterSection = ({ filters, setFilters }) => {
                                 href='#a'
                                 className='btn-reset-sub'
                                 onClick={() => (filters.price = null)}>
-                                초기화
+                                Reset
                             </a>
                         )}
                     </button>
@@ -227,7 +259,7 @@ const FilterSection = ({ filters, setFilters }) => {
                                 type='button'
                                 className='btn-tooltip-close'
                                 onClick={() => handleFilterOptionToggle(null)}>
-                                닫기
+                                Close
                             </button>
                             <ul>
                                 {filterOptions.price.map((price, index) => (
@@ -258,7 +290,7 @@ const FilterSection = ({ filters, setFilters }) => {
                                 type='checkbox'
                                 onChange={handlePopularityFilterChange}
                             />
-                            <label htmlFor='popularity'>인기</label>
+                            <label htmlFor='popularity'>Popularity</label>
                         </li>
                         <li>
                             <input
@@ -268,7 +300,7 @@ const FilterSection = ({ filters, setFilters }) => {
                                 type='checkbox'
                                 onChange={handleSpecialPriceFilterChange}
                             />
-                            <label htmlFor='specialPrice'>특가</label>
+                            <label htmlFor='specialPrice'>Special Price</label>
                         </li>
                         <li>
                             <input
@@ -278,7 +310,7 @@ const FilterSection = ({ filters, setFilters }) => {
                                 type='checkbox'
                                 onChange={handleNewCarFilterChange}
                             />
-                            <label htmlFor='newCar'>신차</label>
+                            <label htmlFor='newCar'>New Car</label>
                         </li>
                         <li>
                             <input
@@ -288,7 +320,7 @@ const FilterSection = ({ filters, setFilters }) => {
                                 type='checkbox'
                                 onChange={handleNewCarLevelFilterChange}
                             />
-                            <label htmlFor='newCarLevel'>신차급</label>
+                            <label htmlFor='newCarLevel'>New Car Level</label>
                         </li>
                         <li>
                             <input
@@ -298,7 +330,7 @@ const FilterSection = ({ filters, setFilters }) => {
                                 type='checkbox'
                                 onChange={handleFastRentalFilterChange}
                             />
-                            <label htmlFor='fastRental'>빠른대여</label>
+                            <label htmlFor='fastRental'>Fast Rental</label>
                         </li>
                         <li>
                             <input
@@ -308,7 +340,7 @@ const FilterSection = ({ filters, setFilters }) => {
                                 type='checkbox'
                                 onChange={handlePremiumFilterChange}
                             />
-                            <label htmlFor='premium'>프리미엄</label>
+                            <label htmlFor='premium'>Premium</label>
                         </li>
                     </ul>
                 </div>
