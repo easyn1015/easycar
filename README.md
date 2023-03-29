@@ -1,4 +1,4 @@
-# SOCAR Rental System App
+# Easy car Rental System App
 
 This project is a web application for displaying and filtering car products.
 
